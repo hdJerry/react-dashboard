@@ -156,15 +156,18 @@ export const Card = styled.div `
     }
 
      @media ${device.mobileL} {
-         flex: 1 1 ${props => props.width || '300px'};
+         flex: 1 0 ${props => props.width || '300px'};
 
          &:not(:last-child){
                 margin-right: unset;
          }
          margin-bottom: 19px;
+
+       
      }
 
      @media ${device.tablet} {
+         flex: 1 1 ${props => props.width || '300px'};
         &:not(:last-child){
                 margin-right: 19px;
          }
@@ -176,12 +179,21 @@ export const FlexContainerRow = styled.div `
     width: ${props => props.width || '100%'};
     flex-wrap: wrap;
     justify-content: ${props => props.justify || 'flex-start'};
-    // padding: 10px;
     margin-top: ${props => props.top || ''};
     margin-bottom: ${props => props.bottom || ''};
-    overflow: auto;
     
     @media ${device.tablet} {
         flex-wrap: nowrap;
+        overflow: auto;
+         &::-webkit-scrollbar {
+            height: 6px;
+            background-color: #046af326;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+        }
      }
+
 `;
