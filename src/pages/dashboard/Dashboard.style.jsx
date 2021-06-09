@@ -33,7 +33,7 @@ export const HeaderContainer = styled.div `
 `;
 
 export const Main = styled.div `
-    width: 95%;
+    width: 100%;
     max-width: 1440px;
     margin: 49px auto 0;
     padding: 0 20px;
@@ -125,7 +125,7 @@ export const ProfileName = styled.p`
 
 export const TabContainer = styled.div `
     ${FlexBox}
-    justify-content: center;
+    width: unset;
     overflow: auto;
     margin-top: 31px;
 
@@ -144,13 +144,13 @@ export const TabValue = styled.span `
     
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 11px;
     line-height: 21px;
     text-transform: uppercase;
     color: #000;
-    padding: 5px 15px;
+    padding: 5px 12px;
     justify-content: center;
-    margin-left: 20px;
+    margin-left: 7px;
     border-radius: 100px;
 
     &.active {
@@ -160,6 +160,9 @@ export const TabValue = styled.span `
 
     @media ${device.tablet} { 
         flex: unset;
+        margin-left: 20px;
+        font-size: 14px;
+        padding: 5px 15px;
     }
 
 `;
