@@ -24,6 +24,12 @@ export const HeaderContainer = styled.div `
     ${FlexBox}
 `;
 
+export const Main = styled.div `
+    width: 1049px;
+    max-width: 1440px;
+    margin: 48px auto 0;
+`;
+
 export const SearchInputContainer = styled.div `
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -110,5 +116,25 @@ export const TabValue = styled.span `
         color: #fff;
         background: #046AF3;
     }
+
+`;
+
+export const Card = styled.div `
+    flex: 0 1 ${props => props.width || '300px'};
+    background-color: ${props => props.background || '#FFFFFF'};
+    padding: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    height: ${props => props.height || '410px'};
+    // margin-left: 20px;
+`;
+
+export const FlexContainerRow = styled.div `
+    ${FlexBox}
+    width: ${props => props.width || '100%'};
+    // flex-wrap: wrap;
+    justify-content: ${props => props.justify || 'space-between'};
+    padding: 10px;
+    margin-top: ${props => props.top || ''};
+    margin-bottom: ${props => props.bottom || ''};
 
 `;

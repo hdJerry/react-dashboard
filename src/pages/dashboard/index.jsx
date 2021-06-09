@@ -14,6 +14,9 @@ MoreIcon,
 ProfilePics,
 Profile,
 ProfileName,
+Card,
+FlexContainerRow,
+Main,
 } from './Dashboard.style';
 
 const Dashboard = () => {
@@ -43,7 +46,7 @@ const Dashboard = () => {
     ];
 
     return (
-       <>
+       <Main>
            <HeaderContainer>
                <SearchInputContainer>
                     <SearchIcon>
@@ -93,7 +96,13 @@ const Dashboard = () => {
             </TabContainer>
 
 
-       </>
+            <FlexContainerRow top={'20px'} bottom={'57px'}>
+                <Card width={'337px'} height={'100px'}/>
+                <Card width={'337px'} height={'100px'} />
+                <Card width={'337px'} height={'100px'} />
+            </FlexContainerRow>
+
+       </Main>
     );
 }
 
