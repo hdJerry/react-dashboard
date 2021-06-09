@@ -109,6 +109,10 @@ const Dashboard = () => {
                 <Card width={'337px'} height={'410px'} />
             </FlexContainerRow>
 
+            <FlexContainerRow top={'20px'} bottom={'57px'}>
+                <Card width={'100%'} height={'1071px'} />
+            </FlexContainerRow>
+
        </Main>
     );
 }
