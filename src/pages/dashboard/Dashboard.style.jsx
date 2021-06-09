@@ -50,7 +50,20 @@ export const SearchInputContainer = styled.div `
     flex: 1 1 100%;
     height: 57px;
     position: relative;
+
+    border: 2px solid ${props => props.isActive ? '#046af326' : '#fff'};
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0 20px 0 50px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            color: #07074D;
+        }
     `;
+
+
 
 export const SearchIcon = styled.div `
     ${LeftIcons}
