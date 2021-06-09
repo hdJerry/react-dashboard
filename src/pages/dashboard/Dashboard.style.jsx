@@ -121,14 +121,14 @@ export const TabValue = styled.span `
 `;
 
 export const Card = styled.div `
-    flex: 1 1 ${props => props.width || '300px'};
+    flex: 0 1 ${props => props.width || '300px'};
     background-color: ${props => props.background || '#FFFFFF'};
     padding: 10px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     height: ${props => props.height || '410px'};
     border-radius: 10px;
     &:not(:last-child){
-        margin-right: 20px;
+        margin-right: 19px;
     }
 `;
 
@@ -136,7 +136,7 @@ export const FlexContainerRow = styled.div `
     ${FlexBox}
     width: ${props => props.width || '100%'};
     // flex-wrap: wrap;
-    justify-content: ${props => props.justify || 'space-between'};
+    justify-content: ${props => props.justify || 'flex-start'};
     // padding: 10px;
     margin-top: ${props => props.top || ''};
     margin-bottom: ${props => props.bottom || ''};
