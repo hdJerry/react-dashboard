@@ -156,7 +156,7 @@ export const Card = styled.div `
     }
 
      @media ${device.mobileL} {
-         flex: 1 0 ${props => props.width || '300px'};
+         flex: 1 0 100%;
 
          &:not(:last-child){
                 margin-right: unset;
