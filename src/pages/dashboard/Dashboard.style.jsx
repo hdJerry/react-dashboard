@@ -26,6 +26,10 @@ const RightIcons = css `
 
 export const HeaderContainer = styled.div `
     ${FlexBox}
+    flex-wrap: wrap;
+    @media ${device.tablet} {
+        flex-wrap: nowrap;
+    }
 `;
 
 export const Main = styled.div `
@@ -47,7 +51,7 @@ export const SearchInputContainer = styled.div `
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 10px;
-    flex: 1 1 100%;
+    flex: 1 1 768px;
     height: 57px;
     position: relative;
 
@@ -77,8 +81,13 @@ export const NotificationConatiner = styled.div `
     padding: 10px;
     height: 57px;
     flex: 1 0 254.83px;
-    margin-left: 25.75px;
     position: relative;
+    margin-top: 10px;
+    @media ${device.tablet} {
+        margin-top: unset;
+        margin-left: 25.75px;
+
+    }
 `;
 
 export const BellIcon = styled.div`
@@ -116,16 +125,23 @@ export const ProfileName = styled.p`
 
 export const TabContainer = styled.div `
     ${FlexBox}
-    justify-content: flex-end;
-
+    justify-content: center;
+    overflow: auto;
     margin-top: 31px;
+
+    @media ${device.tablet} { 
+         justify-content: flex-end;
+    }
+    
 
 `;
 
 
 export const TabValue = styled.span `
     ${FlexBox}
+    flex: 1 0 auto;
     width: unset;
+    
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -142,6 +158,10 @@ export const TabValue = styled.span `
         background: #046AF3;
     }
 
+    @media ${device.tablet} { 
+        flex: unset;
+    }
+
 `;
 
 export const Card = styled.div `
@@ -151,9 +171,17 @@ export const Card = styled.div `
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     height: ${props => props.height || '410px'};
     border-radius: 10px;
-    &:not(:last-child){
-        margin-right: 19px;
-    }
+
+    @media ${device.mobile} {
+         flex: 1 0 100%;
+
+         &:not(:last-child){
+                margin-right: unset;
+         }
+         margin-bottom: 19px;
+
+       
+     }
 
      @media ${device.mobileL} {
          flex: 1 0 100%;
