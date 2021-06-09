@@ -51,7 +51,7 @@ export const SearchInputContainer = styled.div `
     height: 57px;
     position: relative;
 
-    border: 2px solid ${props => props.isActive ? '#046af326' : '#fff'};
+    border: 2px solid ${props => props.isActive ? '#046AF376' : '#fff'};
         input {
             width: 100%;
             height: 100%;
