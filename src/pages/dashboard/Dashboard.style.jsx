@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+import {
+    device
+} from '../../data/globaldata'
+
 
 const FlexBox = css `
     width: 100%;
@@ -25,10 +29,17 @@ export const HeaderContainer = styled.div `
 `;
 
 export const Main = styled.div `
-    width: 1049px;
+    width: 95%;
     max-width: 1440px;
     margin: 49px auto 0;
     padding: 0 20px;
+    @media ${device.laptop} {
+        width: 80%;
+     }
+
+    @media ${device.laptopL} {
+        width: 1049px;
+     }
 `;
 
 export const SearchInputContainer = styled.div `
@@ -130,16 +141,34 @@ export const Card = styled.div `
     &:not(:last-child){
         margin-right: 19px;
     }
+
+     @media ${device.mobileL} {
+         flex: 1 1 ${props => props.width || '300px'};
+
+         &:not(:last-child){
+                margin-right: unset;
+         }
+         margin-bottom: 19px;
+     }
+
+     @media ${device.tablet} {
+        &:not(:last-child){
+                margin-right: 19px;
+         }
+     }
 `;
 
 export const FlexContainerRow = styled.div `
     ${FlexBox}
     width: ${props => props.width || '100%'};
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: ${props => props.justify || 'flex-start'};
     // padding: 10px;
     margin-top: ${props => props.top || ''};
     margin-bottom: ${props => props.bottom || ''};
+    overflow: auto;
     
-
+    @media ${device.tablet} {
+        flex-wrap: nowrap;
+     }
 `;
