@@ -34,7 +34,7 @@ export const Main = styled.div `
     margin: 49px auto 0;
     padding: 0 20px;
     @media ${device.laptop} {
-        width: 80%;
+        width: 95%;
      }
 
     @media ${device.laptopL} {
