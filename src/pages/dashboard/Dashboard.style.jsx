@@ -179,14 +179,12 @@ export const Card = styled.div `
     border-radius: 10px;
     overflow: auto;
     position: relative;
+    margin-top: 19px;
 
     @media ${device.mobile} {
          flex: 1 0 100%;
 
-         &:not(:last-child){
-                margin-right: unset;
-         }
-         margin-right: ${props => props.right || '19px'};
+         margin-right: unset;
 
        
      }
@@ -194,10 +192,7 @@ export const Card = styled.div `
      @media ${device.mobileL} {
          flex: 1 0 100%;
 
-         &:not(:last-child){
-                margin-right: unset;
-         }
-        margin-right: ${props => props.right || '19px'};
+         margin-right: unset;
 
        
      }
