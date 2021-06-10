@@ -177,6 +177,8 @@ export const Card = styled.div `
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     height: ${props => props.height || '410px'};
     border-radius: 10px;
+    overflow: auto;
+    position: relative;
 
     @media ${device.mobile} {
          flex: 1 0 100%;
@@ -184,7 +186,7 @@ export const Card = styled.div `
          &:not(:last-child){
                 margin-right: unset;
          }
-         margin-bottom: 19px;
+         margin-right: ${props => props.right || '19px'};
 
        
      }
@@ -195,7 +197,7 @@ export const Card = styled.div `
          &:not(:last-child){
                 margin-right: unset;
          }
-         margin-bottom: 19px;
+        margin-right: ${props => props.right || '19px'};
 
        
      }
@@ -203,7 +205,7 @@ export const Card = styled.div `
      @media ${device.tablet} {
          flex: 1 1 ${props => props.width || '300px'};
         &:not(:last-child){
-                margin-right: 19px;
+                margin-right: ${props => props.right || '19px'};
          }
      }
 `;
@@ -215,6 +217,7 @@ export const FlexContainerRow = styled.div `
     justify-content: ${props => props.justify || 'flex-start'};
     margin-top: ${props => props.top || ''};
     margin-bottom: ${props => props.bottom || ''};
+    position: relative;
     
     @media ${device.tablet} {
         flex-wrap: nowrap;
@@ -230,4 +233,38 @@ export const FlexContainerRow = styled.div `
         }
      }
 
+`;
+
+
+export const TableContainer = styled.table `
+     width: 100%;
+     font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    letter-spacing: 0.2px;
+     thead {
+
+         th {
+             font-size: 14px;
+             color: #303956;
+              padding: 25px 0px;
+             text-align: left;
+             border-bottom: 1px solid #E0E0E0;
+            }
+        }
+        
+        tbody {
+            td {
+             padding: 25px 0px;
+            //  border-top: 1px solid #E0E0E0;
+             border-bottom: 1px solid #E0E0E0;
+            font-size: 16px;
+
+            color: #949292;
+         }
+     }
 `;

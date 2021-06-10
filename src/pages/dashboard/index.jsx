@@ -17,12 +17,15 @@ ProfileName,
 Card,
 FlexContainerRow,
 Main,
+TableContainer,
 } from './Dashboard.style';
 
 const Dashboard = () => {
 
     const [activeTab, setActiveTab] = useState(0);
     const [activeSearch, setActiveSearch] = useState(0);
+    const tableRows = Array.from(new Array(40));
+
     const tabs = [
         {
             id: 1,
@@ -110,7 +113,40 @@ const Dashboard = () => {
             </FlexContainerRow>
 
             <FlexContainerRow top={'20px'} bottom={'57px'}>
-                <Card width={'100%'} height={'1071px'} />
+                <Card width={'100%'} height={'1071px'} right={'unset'}>
+                    <TableContainer>
+                        <thead>
+                            <tr>
+                            <th>Amount</th>
+                            <th>Transaction Reference</th>
+                            <th>Payment Method</th>
+                            <th>Date/Time</th>
+                            <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {
+                                tableRows.map((res, index) => (
+                                    <tr key={index}>
+                                        <td>₦299,980.00</td>
+                                        <td>MNFY|20200924165017|001810</td>
+                                        <td>Account transfer</td>
+                                        <td>September 23rd 2020, 7:20:19 pm</td>
+                                        <td>Paid</td>
+                                    </tr>
+                                ))
+                            }
+
+
+                        </tbody>
+                    </TableContainer>
+                 </Card>
+                    <div style={{position: 'absolute', bottom: '0', left: '5px', right: '5px', height: '70px', padding: '10px', backgroundColor: '#fff'}}>
+                        <h3>
+                            Paggination
+                        </h3>
+                    </div>
             </FlexContainerRow>
 
        </Main>
