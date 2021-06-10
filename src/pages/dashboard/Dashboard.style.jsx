@@ -144,14 +144,17 @@ export const TabValue = styled.span `
     
     font-style: normal;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 14px;
     line-height: 21px;
     text-transform: uppercase;
     color: #000;
-    padding: 5px 12px;
+    padding: 5px 15px;
     justify-content: center;
-    margin-left: 7px;
     border-radius: 100px;
+
+     &:not(:last-child){
+         margin-right: 10px;
+      }
 
     &.active {
         color: #fff;
