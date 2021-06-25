@@ -1,15 +1,5 @@
 import React from 'react';
 
-
-
-import {
-    Dashboard as DashboardIcon,
-    Fingerprint,
-    Shuffle,
-    Chat,
-    MonetizationOn,
-} from '@material-ui/icons';
-
 import {
     SideMenu,
     SideMenuLogo,
@@ -18,70 +8,11 @@ import {
     SideMenuLinkIcon,
 } from './SideMenu.style'
 
+import routes from '../../data/routes';
+
 const SideMenuContainer = () => {
 
-    const links = [
-        {
-            icon: DashboardIcon,
-            link: 'Dashboard',
-            to: '/dashboard'
-        },
-        {
-            icon: Chat,
-            link: 'Borrowers',
-            to: '/borrowers'
-        },
-        {
-            icon: DashboardIcon,
-            link: 'Transactions',
-            to: '/transactions'
-        },
-        {
-            icon: Shuffle,
-            link: 'Loans',
-            to: '/loans'
-        },
-        {
-            icon: DashboardIcon,
-            link: 'Repayments',
-            to: '/repayments'
-        },
-        {
-            icon: DashboardIcon,
-            link: 'Collateral register',
-            to: '/collateral-register'
-        },
-        {
-            icon: Fingerprint,
-            link: 'Weekly /Monthly Calendars',
-            to: '/calendars'
-        },
-        {
-            icon: DashboardIcon,
-            link: 'Collection sheets',
-            to: '/transactions'
-        },
-        {
-            icon: MonetizationOn,
-            link: 'Savings',
-            to: '/loans'
-        },
-        {
-            icon: DashboardIcon,
-            link: 'Investors',
-            to: '/collateral-register'
-        },
-        {
-            icon: Fingerprint,
-            link: 'Account Managers',
-            to: '/repayments'
-        },
-        {
-            icon: Fingerprint,
-            link: 'Varification Managers',
-            to: '/calendars'
-        },
-    ];
+    const links = routes;
 
     return (
         <SideMenu>

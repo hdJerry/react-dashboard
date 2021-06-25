@@ -1,52 +1,54 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
 } from 'react-router-dom';
 
-
 import Dashboard from './pages/dashboard';
+import {
+  useSelector
+} from 'react-redux'
 
-import SideMenuContainer from './Components/SideMenu';
+
+import Login from './pages/login';
+
 
 import ErrorPage from './pages/ErrorPage'
 
-import { 
-  AppContainer, 
-  MainContents, 
- } from './App.styles'
+
+
+ import PrivateRoute from './Components/PrivateRoute';
+ import DashboardContainer from './Components/Dashboard';
+
+
+ import routes from './data/routes';
+ 
 
 function App() {
-  let token = 'thereisatokenherenow!!!!';
+  let { token } = useSelector(state => state.user);
+
+  const routesData = routes;
   
   return (
-    <Router>
-
-      <AppContainer>
-        {
-          token && (
-            <SideMenuContainer />
-          )
-        }
-
-        <MainContents>
+     
           <Switch>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route exact path="/" component={Dashboard} />
+                <Route exact path="/login">
+                  <Login token={token} />
+               </Route>
 
-            <Route path="/borrowers">
-              <h3>Borrowers</h3>
-            </Route>
+                <DashboardContainer>
+                    {
+                      routesData.map((res, index) => (
+                        <PrivateRoute exact path={res.to} token={token} component={res.component} redirectTo='/login' key={index}/>
+                      ))
+                    }
+
+                <PrivateRoute exact path='/' token={token} component={Dashboard} redirectTo='/login'/>
+                </DashboardContainer>
+
             <Route component={ErrorPage} />
 
           </Switch>
-
-        </MainContents>
-
-      </AppContainer>
-    
-    </Router>
   );
 }
 

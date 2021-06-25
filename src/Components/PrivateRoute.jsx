@@ -3,12 +3,14 @@ import { Route, Redirect } from 'react-router-dom'
 
 const PrivateRoute = ({ component: Component, token, ...otherProps }) => {
 
+    console.log();
+
     return (
         <Route
             {...otherProps}
             render={props => (
                     (
-                     !token
+                     token
                         ?
                         <Component {...props} />
                         :
